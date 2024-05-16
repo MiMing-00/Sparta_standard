@@ -4,9 +4,11 @@ import ToDoListContain from "../component/ToDoListContain";
 
 function App() {
   return (
-    <main className="layout">
-      <ToDoListContain />
-    </main>
+    <div>
+      <main className="layout">
+        <ToDoListContain />
+      </main>
+    </div>
   );
 }
 

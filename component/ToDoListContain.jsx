@@ -6,8 +6,8 @@ function ToDoListContain() {
   return (
     <div>
       <FormTodoList />
-      <ToDoList />
-      <ToDoList />
+      {/* <ToDoList />
+      <ToDoList /> */}
     </div>
   );
 }
