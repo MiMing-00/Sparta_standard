@@ -1,12 +1,12 @@
-import { useState } from "react";
+import React from "react";
 import "./App.css";
-import ToDoListContain from "../component/ToDoListContain";
 import Layout from "../component/Layout";
+import ToDoContain from "../component/ToDoContain";
 
 function App() {
   return (
     <Layout>
-      <ToDoListContain />
+      <ToDoContain />
     </Layout>
   );
 }
