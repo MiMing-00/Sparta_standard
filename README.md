@@ -1,6 +1,9 @@
-# react-5-standard-1st-assignment
+# 🔥🔥Spata_standard_homework🔥🔥
 
-## 과제 수행 방법
+## 1stHomework
+Using useState() for the fIrSt TiMe!!
+Adding, deleting, and validating lists in React environment
 
-- App.jsx 파일에 TODO: 로 표기된 주석을 확인하고 그 아래 부분을 확인하고 코드를 작성하세요.
-- 과제 결과는 https://react-5-standard-1st-homework.vercel.app/ 와 동일하게 동작해야 합니다.
+## 2ndHomework
+Create a 'to-do list' on your own without help
+
