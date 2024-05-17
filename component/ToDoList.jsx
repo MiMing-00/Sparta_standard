@@ -1,8 +1,6 @@
 import React from "react";
 
-function ToDoList() {
-  const [toDoList, setToDoList] = useState([]);
-
+function ToDoList({ toDoLists, setToDoLists }) {
   return (
     <>
       <h3>working</h3>

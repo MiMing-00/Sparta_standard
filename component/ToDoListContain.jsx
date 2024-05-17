@@ -1,13 +1,17 @@
-import React from "react";
+import { useState } from "react";
 import FormTodoList from "./FormTodoList";
 import ToDoList from "./ToDoList";
 
 function ToDoListContain() {
+  const [toDoLists, setToDoLists] = useState([
+    { id: 1, title: "안녕", content: "ㅎㅇ", isDone: false },
+  ]);
+
   return (
     <div>
-      <FormTodoList />
-      {/* <ToDoList />
-      <ToDoList /> */}
+      <FormTodoList setToDoLists={setToDoLists} />
+      {/* <ToDoList toDoLists={toDoLists} setToDoLists={setToDoLists} />
+      <ToDoList toDoLists={toDoLists} setToDoLists={setToDoLists} /> */}
     </div>
   );
 }
