@@ -1,10 +1,17 @@
 import React from "react";
+import ToDoItem from "./ToDoItem";
 
-function ToDoList({ toDoLists, setToDoLists }) {
+function ToDoList({ title, toDoLists }) {
   return (
     <>
-      <h3>working</h3>
-      <h3>done</h3>
+      {title}
+      <ul>
+        {toDoLists.map((todo) => (
+          <li key={todo.id}>
+            <ToDoItem todo={todo} />
+          </li>
+        ))}
+      </ul>
     </>
   );
 }

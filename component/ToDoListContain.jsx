@@ -10,8 +10,8 @@ function ToDoListContain() {
   return (
     <div>
       <FormTodoList setToDoLists={setToDoLists} />
-      {/* <ToDoList toDoLists={toDoLists} setToDoLists={setToDoLists} />
-      <ToDoList toDoLists={toDoLists} setToDoLists={setToDoLists} /> */}
+      <ToDoList title="working" toDoLists={toDoLists} />
+      <ToDoList title="done" toDoLists={toDoLists} />
     </div>
   );
 }
