@@ -13,10 +13,12 @@ function ToDoContain() {
       <ToDoLists
         title="Working"
         toDoLists={toDoLists.filter((toDoList) => !toDoList.isDone)}
+        setToDoLists={setToDoLists}
       />
       <ToDoLists
         title="Done"
         toDoLists={toDoLists.filter((toDoList) => toDoList.isDone)}
+        setToDoLists={setToDoLists}
       />
     </div>
   );
