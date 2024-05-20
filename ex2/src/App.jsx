@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function App() {
-  const students = [
+  const [students, setStudents] = useState([
     { name: "Alice", age: 17, grade: "A" },
     { name: "Bob", age: 18, grade: "B" },
     { name: "Charlie", age: 16, grade: "C" },
@@ -14,36 +14,40 @@ function App() {
     { name: "Jenny", age: 25, grade: "D" },
     { name: "Kevin", age: 26, grade: "E" },
     { name: "Linda", age: 27, grade: "F" },
-  ];
+  ]);
+  const [filteredStudents, setFilteredStudents] = useState(students);
 
-  const [minAge, setMinAge] = useState(18);
+  // TODO: filterByAge 함수를 작성하세요. 이 함수는 최소 나이를 매개변수로 받아 해당 나이 이상인 학생들로 필터링해야 합니다.
+  const filterByAge = (minAge) => {
+    setFilteredStudents((prev) =>
+      prev.filter((student) => student.age >= minAge)
+    );
+  };
 
-  // TODO: filter를 사용하여 minAge 이상의 학생들만 선택하세요.
-  const filteredStudents = students.filter((student) => student.age >= minAge);
+  // TODO: filterByGrade 함수를 작성하세요. 이 함수는 특정 학점을 매개변수로 받아 해당 학점의 학생들로 필터링해야 합니다.
+  const filterByGrade = (grade) => {
+    setFilteredStudents((prev) =>
+      prev.filter((student) => student.grade === grade)
+    );
+  };
 
-  const [inputAge, setInputAge] = useState("");
+  // TODO: resetFilter 함수를 작성하세요. 이 함수는 필터를 초기화하여 모든 학생들을 표시해야 합니다.
+  const resetFilter = () => {
+    setFilteredStudents(students);
+  };
 
   return (
     <div>
       <h1>학생 목록</h1>
-      다음 나이 이상의 학생목록만 출력해요 :{" "}
-      {/* TODO: input에 입력된 값(숫자) 이상의 나이를 가진 학생들만 출력하세요. */}
-      <input
-        type="number"
-        placeholder="나이"
-        value={inputAge}
-        onChange={(event) => setInputAge(event.target.value)}
-      />{" "}
-      살 이상
+      <button onClick={() => filterByAge(24)}>24세 이상</button>
+      <button onClick={() => filterByGrade("A")}>A등급</button>
+      <button onClick={resetFilter}>필터 초기화</button>
       <ul>
-        {/* TODO: map을 사용하여 필터링된 학생들의 정보를 표시하세요. 동명이인은 없다고 가정합니다. ex) 홍길동 - Age: 24, Grade: A */}
-        {students
-          .filter(({ age }) => age >= inputAge)
-          .map(({ name, age, grade }) => (
-            <li key={name} style={{ outline: "none" }}>
-              {name} - Age: {age}, Grade: {grade}
-            </li>
-          ))}
+        {filteredStudents.map((student, index) => (
+          <li key={index}>
+            {student.name} - Age: {student.age}, Grade: {student.grade}
+          </li>
+        ))}
       </ul>
     </div>
   );
