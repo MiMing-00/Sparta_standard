@@ -1,8 +1,8 @@
 import React, { createContext, useState } from "react";
 
-export const textContext = createContext();
+export const TextContext = createContext();
 
-export const textContextProvider = ({ children }) => {
+export const TextContextProvider = ({ children }) => {
   const [texts, setTexts] = useState(() =>
     localStorage.getItem("texts")
       ? JSON.parse(localStorage.getItem("texts"))
@@ -10,8 +10,8 @@ export const textContextProvider = ({ children }) => {
   );
 
   return (
-    <textContext.Provider value={{ texts, setTexts }}>
+    <TextContext.Provider value={{ texts, setTexts }}>
       {children}
-    </textContext.Provider>
+    </TextContext.Provider>
   );
 };
