@@ -2,12 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-import { TextContextProvider } from "./context/TextContext.jsx";
+import { Provider } from "react-redux";
+import store from "./redux/config/configStore.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <TextContextProvider>
+    <Provider store={store}>
       <App />
-    </TextContextProvider>
+    </Provider>
   </React.StrictMode>
 );
