@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import TextInput from "./components/TextInput";
 import TextList from "./components/TextList";
+import { textContext } from "./context/textContext";
 
 function App() {
   // TODO: texts 를 context api 로 리팩터링 하세요.
-  const [texts, setTexts] = useState(() =>
-    localStorage.getItem("texts")
-      ? JSON.parse(localStorage.getItem("texts"))
-      : [],
-  );
+  // const [texts, setTexts] = useState(() =>
+  //   localStorage.getItem("texts")
+  //     ? JSON.parse(localStorage.getItem("texts"))
+  //     : [],
+  // );
+
+  const { texts, setTexts } = useContext(textContext);
 
   useEffect(() => {
     localStorage.setItem("texts", JSON.stringify(texts));
