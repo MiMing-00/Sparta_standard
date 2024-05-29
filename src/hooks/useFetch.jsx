@@ -29,8 +29,5 @@ export default function useFetch() {
     fetchData();
   }, []);
 
-  if (loading) return <h1>Loading...</h1>;
-  if (error) return <h1>Error: {error.message}</h1>;
-
   return { title, loading, error };
 }
