@@ -16,3 +16,5 @@ Familiar with React while working through 3 examples (Router DOM, Styled-compone
 ## 5thHomework
 Familiar with React while refectoring 2 examples (context API and redux)
 
+## 6thHomework
+Familiar with memoization while working through 4 examples (memo, useMemo, useCallback and custom hook)
